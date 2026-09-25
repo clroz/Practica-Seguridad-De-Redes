@@ -1,0 +1,42 @@
+]0;SW1
+Switch#
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#
+vlan 30
+Switch(config-vlan)#
+name DATABASE
+Switch(config-vlan)#
+exit
+Switch(config)#
+interface GigabitEthernet0/0
+Switch(config-if)#
+switchport trunk allowed vlan add 30
+Switch(config-if)#
+exit
+Switch(config)#
+interface GigabitEthernet0/3
+Switch(config-if)#
+switchport mode access
+Switch(config-if)#
+switchport access vlan 30
+Switch(config-if)#
+exit
+Switch(config)#
+end
+Switch#
+write memory
+Building configuration...
+Compressed configuration from 3119 bytes to 1765 bytes[OK]
+*Sep 25 16:28:01.275: %SYS-5-CONFIG_I: Configured from console by console
+Switch#
+lo               UNKNOWN        127.0.0.1/8 
+eth0@if68        UP             10.177.0.3/16 
+eth1@if71        UP             192.168.30.11/28 
+default via 192.168.30.1 dev eth1 
+10.177.0.0/16 dev eth0 proto kernel scope link src 10.177.0.3 
+192.168.10.0/25 via 192.168.30.1 dev eth1 
+192.168.20.0/28 via 192.168.30.1 dev eth1 
+192.168.30.0/28 dev eth1 proto kernel scope link src 192.168.30.11 
+-P INPUT ACCEPT
+-A INPUT ! -s 10.177.0.1/32 -i eth0 -j DROP

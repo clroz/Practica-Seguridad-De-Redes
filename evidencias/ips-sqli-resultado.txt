@@ -1,0 +1,18 @@
+Prueba: SQL Injection HTTP desde USR1 hacia WEB1
+Fecha: 2026-09-25
+
+Resultado HTTP:
+HTTP/1.1 404 Not Found
+Servidor: Apache/2.4.41 (Ubuntu)
+
+Consulta de logs IPS en FortiGate:
+execute log filter reset
+execute log filter category 4
+execute log display
+
+Resultado:
+0 logs found.
+0 logs returned.
+
+Conclusión:
+El payload alcanzó WEB1, pero FortiGate no generó un evento IPS. Se documenta como limitación de las firmas, licencia o versión FortiOS utilizada.

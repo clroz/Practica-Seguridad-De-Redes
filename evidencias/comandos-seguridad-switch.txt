@@ -1,0 +1,24 @@
+enable
+configure terminal
+ip dhcp snooping
+ip dhcp snooping vlan 10,20
+interface GigabitEthernet0/0
+ ip dhcp snooping trust
+exit
+interface range GigabitEthernet0/1 , GigabitEthernet0/2 , GigabitEthernet0/3 , GigabitEthernet1/0
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+exit
+end
+write memory
+
+Verificación:
+show port-security
+show port-security interface gi0/1
+show ip dhcp snooping
+show running-config

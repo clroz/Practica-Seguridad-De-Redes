@@ -1,0 +1,11 @@
+# Credenciales y secretos locales
+.env
+*.key
+*.pem
+*.secret
+
+# Temporales de PNETLab y sistema
+.audit-tools/
+*.tmp
+*.log
+evidencias/*password*

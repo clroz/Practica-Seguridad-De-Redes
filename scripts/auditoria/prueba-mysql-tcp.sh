@@ -1,0 +1,1 @@
+docker exec docker3 sh -c 'mysql --defaults-extra-file=/root/.my-practica.cnf --protocol=TCP --host=10.17.45.131 --port=3306 --connect-timeout=5 --verbose -e "SELECT USER(),CURRENT_USER(); SELECT * FROM practica.productos;"'

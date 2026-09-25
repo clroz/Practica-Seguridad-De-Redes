@@ -1,0 +1,64 @@
+]0;SW1
+IOSv - Cisco Systems Confidential -
+
+Supplemental End User License Restrictions
+
+This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+
+Switch>
+enable
+Switch#
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#
+interface GigabitEthernet0/3
+Switch(config-if)#
+switchport mode access
+Switch(config-if)#
+switchport access vlan 20
+Switch(config-if)#
+exit
+Switch(config)#
+interface GigabitEthernet0/0
+Switch(config-if)#
+switchport trunk allowed vlan remove 30
+Switch(config-if)#
+exit
+Switch(config)#
+end
+Switch#
+write memory
+Building configuration...
+Compressed configuration from 3116 bytes to 1763 bytes
+*Sep 25 18:10:04.541: %SYS-5-CONFIG_I: Configured from console by console[OK]
+Switch#
+show interfaces status
+
+Port      Name               Status       Vlan       Duplex  Speed Type 
+Gi0/0                        connected    trunk      a-full   auto RJ45
+Gi0/1                        connected    10         a-full   auto RJ45
+Gi0/2                        connected    20         a-full   auto RJ45
+Gi0/3                        connected    20         a-full   auto RJ45
+Gi1/0                        connected    10         a-full   auto RJ45
+Gi1/1                        notconnect   1          a-full   auto RJ45
+Gi1/2                        notconnect   1          a-full   auto RJ45
+Gi1/3                        notconnect   1          a-full   auto RJ45
+Switch#
+show interfaces trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Gi0/0       on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Gi0/0       10,20
+
+Port        Vlans allowed and active in management domain
+Gi0/0       10,20
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Gi0/0       10,20
+Switch#
+*Sep 25 18:10:05.796: %GRUB-5-CONFIG_WRITING: GRUB configuration is being updated on disk. Please wait...
+*Sep 25 18:10:06.480: %GRUB-5-CONFIG_WRITTEN: GRUB configuration was written to disk successfully.

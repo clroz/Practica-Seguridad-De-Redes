@@ -1,0 +1,354 @@
+/docker3 Entrypoint=["/home/start.sh"] Cmd=["bash"]
+/docker4 Entrypoint=["/home/start.sh"] Cmd=["bash"]
+/docker6 Entrypoint=["/start.sh"] Cmd=["bash"]
+total 56
+drwxr-xr-x 114 root root 4096 Sep 25 15:34 .
+drwxr-xr-x 114 root root 4096 Sep 25 15:34 ..
+-rwxr-xr-x   1 root root    0 Sep 25 04:26 .dockerenv
+lrwxrwxrwx   1 root root    7 Apr 23  2020 bin -> usr/bin
+drwxr-xr-x   2 root root 4096 Apr 15  2020 boot
+drwxr-xr-x  13 root root 3700 Sep 25 14:50 dev
+drwxr-xr-x 120 root root 4096 Sep 25 04:26 etc
+drwxr-xr-x   3 root root 4096 Sep 25 15:34 home
+lrwxrwxrwx   1 root root    7 Apr 23  2020 lib -> usr/lib
+lrwxrwxrwx   1 root root    9 Apr 23  2020 lib32 -> usr/lib32
+lrwxrwxrwx   1 root root    9 Apr 23  2020 lib64 -> usr/lib64
+lrwxrwxrwx   1 root root   10 Apr 23  2020 libx32 -> usr/libx32
+drwxr-xr-x   2 root root 4096 Apr 23  2020 media
+drwxr-xr-x   2 root root 4096 Apr 23  2020 mnt
+drwxr-xr-x   2 root root 4096 Apr 23  2020 opt
+dr-xr-xr-x 290 root root    0 Sep 25 14:50 proc
+drwx------   2 root root 4096 Sep 25 04:26 root
+drwxr-xr-x  15 root root 4096 Sep 25 15:42 run
+lrwxrwxrwx   1 root root    8 Apr 23  2020 sbin -> usr/sbin
+drwxr-xr-x   2 root root 4096 Apr 23  2020 srv
+dr-xr-xr-x  13 root root    0 Sep 25 03:26 sys
+drwxrwxrwt   3 root root 4096 Sep 25 15:30 tmp
+drwxr-xr-x  71 root root 4096 Mar 31  2021 usr
+drwxr-xr-x  64 root root 4096 Sep 25 15:18 var
+-rwxr-xr-x 1 root root 5607 Nov  6  2019 /etc/init.d/mysql
+-rw-r--r-- 1 root root 2216 Mar 31  2021 /etc/mysql/mysql.conf.d/mysqld.cnf
+/usr/sbin/ip
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+67: eth0@if68: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default  link-netnsid 0
+    inet 10.177.0.3/16 brd 10.177.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+72: eth1@if71: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000 link-netnsid 0
+    inet 192.168.20.11/28 brd 192.168.20.15 scope global eth1
+       valid_lft forever preferred_lft forever
+default via 192.168.20.1 dev eth1 
+default via 10.177.0.1 dev eth0 
+10.177.0.0/16 dev eth0 proto kernel scope link src 10.177.0.3 
+192.168.10.0/25 via 192.168.20.1 dev eth1 
+192.168.20.0/28 dev eth1 proto kernel scope link src 192.168.20.11 
+10.177.0.0/16 dev eth0 proto kernel scope link src 10.177.0.2 
+192.168.10.0/25 via 192.168.20.1 dev eth1 
+192.168.20.0/28 dev eth1 proto kernel scope link src 192.168.20.10 
+10.177.0.0/16 dev eth0 proto kernel scope link src 10.177.0.4 
+192.168.10.0/25 dev eth1 proto kernel scope link src 192.168.10.125 
+192.168.20.0/28 via 192.168.10.1 dev eth1 
+PROMPT ]0;SW1
+Switch>
+COMMAND show running-config
+show running-config
+Building configuration...
+
+Current configuration : 3116 bytes
+!
+! Last configuration change at 16:16:02 UTC Fri Sep 25 2026
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+[credential omitted]
+service compress-config
+!
+hostname Switch
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+ --More--         !
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ --More--         !
+!
+!
+interface GigabitEthernet0/0
+ switchport trunk allowed vlan 10,20
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ negotiation auto
+!
+interface GigabitEthernet0/1
+ switchport access vlan 10
+ switchport mode access
+ negotiation auto
+!
+interface GigabitEthernet0/2
+ switchport access vlan 20
+ switchport mode access
+ negotiation auto
+!
+interface GigabitEthernet0/3
+ switchport access vlan 20
+ switchport mode access
+ negotiation auto
+ --More--         !
+interface GigabitEthernet1/0
+ switchport access vlan 10
+ switchport mode access
+ negotiation auto
+!
+interface GigabitEthernet1/1
+ negotiation auto
+!
+interface GigabitEthernet1/2
+ negotiation auto
+!
+interface GigabitEthernet1/3
+ negotiation auto
+!
+ip forward-protocol nd
+!
+ip http server
+ip http secure-server
+!
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+ --More--         !
+!
+!
+!
+!
+control-plane
+!
+banner exec ^C
+IOSv - Cisco Systems Confidential -
+
+Supplemental End User License Restrictions
+
+This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+^C
+banner incoming ^C
+IOSv - Cisco Systems Confidential -
+ --More--         
+Supplemental End User License Restrictions
+
+This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+^C
+banner login ^C
+IOSv - Cisco Systems Confidential -
+
+Supplemental End User License Restrictions
+
+This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+ --More--         ^C
+!
+line con 0
+line aux 0
+line vty 0 4
+!
+!
+end
+
+Switch#
+COMMAND show startup-config
+show startup-config
+Using 1723 out of 262144 bytes, uncompressed size = 3055 bytes
+!
+! Last configuration change at 04:46:46 UTC Fri Sep 25 2026
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+[credential omitted]
+service compress-config
+!
+hostname Switch
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+ --More--         !
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ --More--         !
+!
+interface GigabitEthernet0/0
+ switchport trunk allowed vlan 10,20
+ negotiation auto
+!
+interface GigabitEthernet0/1
+ switchport access vlan 10
+ switchport mode access
+ negotiation auto
+!
+interface GigabitEthernet0/2
+ switchport access vlan 20
+ switchport mode access
+ negotiation auto
+!
+interface GigabitEthernet0/3
+ switchport access vlan 20
+ switchport mode access
+ negotiation auto
+!
+interface GigabitEthernet1/0
+ switchport access vlan 10
+ --More--          switchport mode access
+ negotiation auto
+!
+interface GigabitEthernet1/1
+ negotiation auto
+!
+interface GigabitEthernet1/2
+ negotiation auto
+!
+interface GigabitEthernet1/3
+ negotiation auto
+!
+ip forward-protocol nd
+!
+ip http server
+ip http secure-server
+!
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+!
+!
+!
+ --More--         !
+!
+control-plane
+!
+banner exec ^C
+IOSv - Cisco Systems Confidential -
+
+Supplemental End User License Restrictions
+
+This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+^C
+banner incoming ^C
+IOSv - Cisco Systems Confidential -
+
+Supplemental End User License Restrictions
+
+ --More--         This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+^C
+banner login ^C
+IOSv - Cisco Systems Confidential -
+
+Supplemental End User License Restrictions
+
+This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+^C
+ --More--         !
+line con 0
+line aux 0
+line vty 0 4
+!
+!
+end
+
+Switch#
+COMMAND show vlan brief
+show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi1/1, Gi1/2, Gi1/3
+10   USERS                            active    Gi0/1, Gi1/0
+20   SERVERS                          active    Gi0/2, Gi0/3
+30   DATABASE                         active    
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
+Switch#
+COMMAND show interfaces trunk
+show interfaces trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Gi0/0       on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Gi0/0       10,20
+
+Port        Vlans allowed and active in management domain
+Gi0/0       10,20
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Gi0/0       10,20
+Switch#

@@ -1,0 +1,14 @@
+Configuración aplicada y guardada en SW1 con write memory.
+
+Port-security:
+Gi0/1, Gi0/2, Gi0/3 y Gi1/0: máximo 2 direcciones, violación Restrict.
+
+DHCP snooping:
+Enabled en VLAN 10 y 20.
+Gi0/0 configurado como trusted.
+
+Spanning-tree:
+PortFast y BPDU Guard aplicados a los cuatro puertos de acceso.
+
+Verificación:
+Los cuatro puertos aparecen en show port-security y el trunk Gi0/0 aparece como trusted en show ip dhcp snooping.

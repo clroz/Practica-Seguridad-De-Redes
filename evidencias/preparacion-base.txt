@@ -1,0 +1,93 @@
+Grants for webapp@192.168.20.10
+GRANT USAGE ON *.* TO `webapp`@`192.168.20.10`
+GRANT SELECT, INSERT, UPDATE, DELETE ON `practica`.* TO `webapp`@`192.168.20.10`
+id	nombre	precio
+1	Producto de laboratorio	100.00
+2	Servicio de prueba	250.00
+Credential stored privately on PNETLab and WEB1; not printed.
+NAME="Ubuntu"
+VERSION="20.04 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
+Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+Get:3 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4850 kB]
+Get:6 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [1300 kB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4368 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4850 kB]
+Ign:7 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [36.2 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [4904 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [32.5 kB]
+Get:11 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [4710 kB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4368 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [4904 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1588 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [28.4 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [54.7 kB]
+Fetched 16.8 MB in 7min 5s (39.6 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  mysql-client-8.0 mysql-client-core-8.0 mysql-common
+The following NEW packages will be installed:
+  mysql-client mysql-client-8.0 mysql-client-core-8.0 mysql-common
+0 upgraded, 4 newly installed, 0 to remove and 208 not upgraded.
+Need to get 5130 kB of archives.
+After this operation, 74.7 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-client-core-8.0 amd64 8.0.42-0ubuntu0.20.04.1 [5091 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 mysql-common all 5.8+1.0.5ubuntu2 [7496 B]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-client-8.0 amd64 8.0.42-0ubuntu0.20.04.1 [22.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-client all 8.0.42-0ubuntu0.20.04.1 [9364 B]
+Fetched 5130 kB in 55s (93.2 kB/s)
+Selecting previously unselected package mysql-client-core-8.0.
+(Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 25445 files and directories currently installed.)
+Preparing to unpack .../mysql-client-core-8.0_8.0.42-0ubuntu0.20.04.1_amd64.deb ...
+Unpacking mysql-client-core-8.0 (8.0.42-0ubuntu0.20.04.1) ...
+Selecting previously unselected package mysql-common.
+Preparing to unpack .../mysql-common_5.8+1.0.5ubuntu2_all.deb ...
+Unpacking mysql-common (5.8+1.0.5ubuntu2) ...
+Selecting previously unselected package mysql-client-8.0.
+Preparing to unpack .../mysql-client-8.0_8.0.42-0ubuntu0.20.04.1_amd64.deb ...
+Unpacking mysql-client-8.0 (8.0.42-0ubuntu0.20.04.1) ...
+Selecting previously unselected package mysql-client.
+Preparing to unpack .../mysql-client_8.0.42-0ubuntu0.20.04.1_all.deb ...
+Unpacking mysql-client (8.0.42-0ubuntu0.20.04.1) ...
+Setting up mysql-common (5.8+1.0.5ubuntu2) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up mysql-client-core-8.0 (8.0.42-0ubuntu0.20.04.1) ...
+Setting up mysql-client-8.0 (8.0.42-0ubuntu0.20.04.1) ...
+Setting up mysql-client (8.0.42-0ubuntu0.20.04.1) ...

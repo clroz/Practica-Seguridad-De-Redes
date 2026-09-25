@@ -1,0 +1,8 @@
+Prueba: descarga HTTP de lab.exe desde USR1 hacia WEB1
+Fecha: 2026-09-25
+
+Resultado:
+curl: (28) Connection timed out after 5001 milliseconds
+
+Interpretación:
+La transferencia fue bloqueada/interrumpida por la política de filtrado de archivos .exe aplicada al tráfico de usuarios hacia WEB1. Debe validarse también el evento en Log & Report > Forward Traffic.
