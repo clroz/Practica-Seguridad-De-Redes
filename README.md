@@ -1,5 +1,9 @@
 # Práctica de Seguridad de Redes — Matrícula 20221745
 
+## Video demostrativo
+
+[Ver video demostrativo](https://youtu.be/Wf0GChKHD4U)
+
 ## Propósito
 
 Implementar una red segmentada y aplicar controles de seguridad con FortiGate, un switch Cisco, un servidor web HTTPS, un servidor de base de datos y una red de usuarios.
