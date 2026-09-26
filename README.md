@@ -31,6 +31,8 @@ Implementar una red segmentada y aplicar controles de seguridad con FortiGate, u
 
 ![Diagrama de topología](docs/topologia.svg)
 
+Exportación descargable de PNETLab: [Practica-Seguridad-20221745.zip](topologia/Practica-Seguridad-20221745.zip).
+
 ```mermaid
 flowchart LR
   U[USR1\n10.17.45.20\nVLAN 10] -->|802.1Q VLAN 10| S[SW1]
